@@ -1,0 +1,203 @@
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #FFFFFF;
+    color: #111111;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  h1, h2, h3, h4, .font-heading, .font-serif-luxury {
+    font-family: 'Playfair Display', 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom Gold & Neutral scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F8F6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8E1D0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A227;
+}
+
+/* Luxury White + Gold + Black utilities */
+.bg-warm-canvas {
+  background-color: #F8F8F6;
+}
+
+.border-gold-subtle {
+  border-color: #E8E1D0;
+}
+
+.border-gold-active {
+  border-color: #D4AF37;
+}
+
+.text-gold-primary {
+  color: #C9A227;
+}
+
+.text-gold-premium {
+  color: #D4AF37;
+}
+
+.text-gold-dark {
+  color: #9A7B16;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #C9A227 0%, #D4AF37 50%, #9A7B16 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-subtle-glow {
+  box-shadow: 0 10px 35px -10px rgba(212, 175, 55, 0.15);
+}
+
+.gold-card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(17, 17, 17, 0.05), 0 2px 6px -1px rgba(212, 175, 55, 0.06);
+}
+
+.gold-card-hover-shadow:hover {
+  box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.2), 0 0 0 1px #D4AF37;
+}
+
+/* Subtle luxury grid pattern */
+.luxury-grid-pattern {
+  background-image: radial-gradient(rgba(201, 162, 39, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Gold line expanding effect */
+.gold-draw-line {
+  position: relative;
+}
+
+.gold-draw-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #D4AF37;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Smooth Hero Background Ken Burns / Zoom-In Zoom-Out Animation */
+@keyframes hero-zoom-pan {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom-pan 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-hero-zoom-slow {
+  animation: hero-zoom-pan 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Continuous Auto-Scrolling Marquee with Performance Optimizations */
+@keyframes marquee-linear {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-linear 65s linear infinite;
+}
+
+.animate-marquee-track-fast {
+  animation-duration: 45s;
+}
+
+.animate-marquee-track-slow {
+  animation-duration: 85s;
+}
+
+.animate-marquee-track:hover,
+.pause-marquee {
+  animation-play-state: paused !important;
+}
+
+/* Subtle Float Animation */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Shimmer Light Sweep */
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(212,175,55,0.15) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer-sweep 3.5s infinite;
+}
+
+/* Touch responsiveness utilities */
+@media (max-width: 640px) {
+  .animate-marquee-track {
+    animation-duration: 48s;
+  }
+}
+
+
+::selection {
+  background-color: #D4AF37;
+  color: #ffffff;
+}
