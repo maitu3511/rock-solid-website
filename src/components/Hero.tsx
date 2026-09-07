@@ -88,11 +88,11 @@ export const Hero: React.FC<HeroProps> = ({
     >
       {/* 1. Cinematic Bright Digital Agency & Growth Marketing Background Visual */}
       <div className="absolute inset-0 pointer-events-none -z-20 overflow-hidden">
-        <img
-          src={heroBg}
+        <HeroVideoBackground
+          src={heroVideo.url}
+          poster={heroBg}
           alt="DigiBasera Digital Growth Marketing and Web Strategy Agency"
-          className="w-full h-full object-cover object-center animate-hero-zoom filter brightness-[1.02] contrast-[1.05]"
-          referrerPolicy="no-referrer"
+          mediaClassName="filter brightness-[1.02] contrast-[1.05]"
         />
         {/* Soft, luminous white-gold gradient overlays for high topic visibility and pristine typography readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F5]/92 via-[#FAF9F5]/82 to-[#FAF9F5]/96" />
