@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({
       id="hero-section"
     >
       {/* 1. Cinematic Bright Digital Agency & Growth Marketing Background Visual */}
-      <div className="absolute inset-0 pointer-events-none -z-20 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <HeroVideoBackground
           src={heroVideo.url}
           poster={heroBg}
@@ -97,8 +97,8 @@ export const Hero: React.FC<HeroProps> = ({
           mediaClassName="filter brightness-[1.02] contrast-[1.05]"
         />
         {/* Soft, luminous white-gold gradient overlays for high topic visibility and pristine typography readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F5]/92 via-[#FAF9F5]/82 to-[#FAF9F5]/96" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/90 via-[#FAF9F5]/30 to-[#FAF9F5]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F5]/55 via-[#FAF9F5]/35 to-[#FAF9F5]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/55 via-[#FAF9F5]/10 to-[#FAF9F5]/55" />
       </div>
 
       {/* 2. Warm Gold Ambient Glows & Subtle Radial Accents */}
