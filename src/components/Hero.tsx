@@ -1,4 +1,6 @@
 import heroBg from '../assets/heroes/home-hero.jpg';
+import heroVideo from '../assets/heroes/home-hero.mp4.asset.json';
+import { HeroVideoBackground } from './HeroVideoBackground';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import {

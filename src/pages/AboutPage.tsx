@@ -1,4 +1,6 @@
 import aboutHeroBg from '../assets/heroes/about-hero.jpg';
+import aboutHeroVideo from '../assets/heroes/about-hero.mp4.asset.json';
+import { HeroVideoBackground } from '../components/HeroVideoBackground';
 import React from 'react';
 import { AboutSection } from '../components/AboutSection';
 import { WhyChooseUs } from '../components/WhyChooseUs';
