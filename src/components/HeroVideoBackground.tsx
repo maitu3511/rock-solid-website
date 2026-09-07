@@ -6,8 +6,10 @@ interface HeroVideoBackgroundProps {
   /** Poster / fallback image shown before the video is ready */
   poster: string;
   alt: string;
-  /** Extra classes applied to the media element (opacity, filters, etc.) */
+  /** Extra classes applied to the media element (filters, etc.) */
   mediaClassName?: string;
+  /** Base opacity of the background media (0-1) */
+  baseOpacity?: number;
 }
 
 /**
@@ -20,6 +22,7 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
   poster,
   alt,
   mediaClassName = '',
+  baseOpacity = 1,
 }) => {
   const [allowVideo, setAllowVideo] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -39,9 +42,8 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
       <img
         src={poster}
         alt={alt}
-        className={`absolute inset-0 w-full h-full object-cover object-center animate-hero-zoom transition-opacity duration-1000 ${
-          isReady ? 'opacity-0' : 'opacity-100'
-        } ${mediaClassName}`}
+        style={{ opacity: isReady ? 0 : baseOpacity }}
+        className={`absolute inset-0 w-full h-full object-cover object-center animate-hero-zoom transition-opacity duration-1000 ${mediaClassName}`}
         referrerPolicy="no-referrer"
       />
       {allowVideo && (
@@ -57,9 +59,8 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
           aria-hidden="true"
           tabIndex={-1}
           onCanPlay={() => setIsReady(true)}
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-            isReady ? 'opacity-100' : 'opacity-0'
-          } ${mediaClassName}`}
+          style={{ opacity: isReady ? baseOpacity : 0 }}
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${mediaClassName}`}
         />
       )}
     </>

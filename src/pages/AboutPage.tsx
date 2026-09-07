@@ -36,7 +36,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             src={aboutHeroVideo.url}
             poster={aboutHeroBg}
             alt="About DigiBasera Strategic Digital Agency Headquarters"
-            mediaClassName="opacity-30 filter brightness-105 contrast-105"
+            baseOpacity={0.3}
+            mediaClassName="filter brightness-105 contrast-105"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-[#FAF9F5]/75 to-[#FAF9F5]/95" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-transparent to-white/90" />
