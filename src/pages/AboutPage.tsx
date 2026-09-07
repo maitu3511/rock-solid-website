@@ -31,7 +31,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       {/* Page Hero Header with Distinctive Zoom Background */}
       <div className="relative py-16 sm:py-24 mb-12 overflow-hidden border-b border-[#E8E1D0] bg-[#FAF9F5]">
         {/* Topic-Related Agency Strategy Background Image with Ken Burns / Zoom Effect */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <HeroVideoBackground
             src={aboutHeroVideo.url}
             poster={aboutHeroBg}
