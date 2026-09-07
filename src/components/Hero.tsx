@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({
       id="hero-section"
     >
       {/* 1. Cinematic Bright Digital Agency & Growth Marketing Background Visual */}
-      <div className="absolute inset-0 pointer-events-none -z-20 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <HeroVideoBackground
           src={heroVideo.url}
           poster={heroBg}
