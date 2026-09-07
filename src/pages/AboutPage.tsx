@@ -32,11 +32,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <div className="relative py-16 sm:py-24 mb-12 overflow-hidden border-b border-[#E8E1D0] bg-[#FAF9F5]">
         {/* Topic-Related Agency Strategy Background Image with Ken Burns / Zoom Effect */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
-          <img
-            src={aboutHeroBg}
+          <HeroVideoBackground
+            src={aboutHeroVideo.url}
+            poster={aboutHeroBg}
             alt="About DigiBasera Strategic Digital Agency Headquarters"
-            className="w-full h-full object-cover object-center animate-hero-zoom opacity-30 filter brightness-105 contrast-105"
-            referrerPolicy="no-referrer"
+            mediaClassName="opacity-30 filter brightness-105 contrast-105"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-[#FAF9F5]/75 to-[#FAF9F5]/95" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-transparent to-white/90" />
