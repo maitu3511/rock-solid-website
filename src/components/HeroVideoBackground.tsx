@@ -54,11 +54,14 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           disablePictureInPicture
           aria-hidden="true"
           tabIndex={-1}
-          onCanPlay={() => setIsReady(true)}
+          onCanPlay={(e) => {
+            setIsReady(true);
+            void (e.currentTarget as HTMLVideoElement).play().catch(() => {});
+          }}
           style={{ opacity: isReady ? baseOpacity : 0 }}
           className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${mediaClassName}`}
         />
