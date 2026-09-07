@@ -36,11 +36,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             src={aboutHeroVideo.url}
             poster={aboutHeroBg}
             alt="About DigiBasera Strategic Digital Agency Headquarters"
-            baseOpacity={0.3}
+            baseOpacity={1}
             mediaClassName="filter brightness-105 contrast-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-[#FAF9F5]/75 to-[#FAF9F5]/95" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-transparent to-white/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-[#FAF9F5]/35 to-[#FAF9F5]/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/55 via-transparent to-white/55" />
         </div>
 
         {/* Ambient Gold Glow */}
