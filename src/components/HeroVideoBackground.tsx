@@ -15,7 +15,7 @@ interface HeroVideoBackgroundProps {
 /**
  * Full-bleed hero background: poster image first (instant paint),
  * then a muted, looping, controls-free video fades in once it can play.
- * Skipped entirely for users who prefer reduced motion or save-data.
+ * Skipped for save-data users; poster stays as the fallback on any error.
  */
 export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
   src,
@@ -28,9 +28,8 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const connection = (navigator as unknown as { connection?: { saveData?: boolean } }).connection;
-    if (reduceMotion || connection?.saveData) return;
+    if (connection?.saveData) return;
 
     // Defer loading so the video never competes with first paint
     const idle = window.setTimeout(() => setAllowVideo(true), 400);
